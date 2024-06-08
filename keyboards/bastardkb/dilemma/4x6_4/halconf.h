@@ -17,10 +17,11 @@
 
 #pragma once
 
-#define HAL_USE_SPI TRUE
-
 #define DIODE_DIRECTION ROW2COL
+#undef IGNORE_MOD_TAP_INTERRUPT
 #define PERMISSIVE_HOLD
+#define QUICK_TAP_TERM 135
+#define QUICK_TAP_TERM_PER_KEY
 
 /* RGB settings. */
 #define RGBLED_NUM 58
