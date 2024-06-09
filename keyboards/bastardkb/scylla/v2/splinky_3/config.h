@@ -18,7 +18,15 @@
 #pragma once
 
 /* Handedness. */
-#define MASTER_RIGHT
+#define MASTER_LEFT
+
+#define NO_ALT_REPEAT_KEY
+#define PERMISSIVE_HOLD
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+#define QUICK_TAP_TERM 135
+#define QUICK_TAP_TERM_PER_KEY
+#define TAPPING_TERM 200
+#define TAPPING_TERM_PER_KEY
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
