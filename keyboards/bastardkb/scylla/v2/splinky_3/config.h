@@ -1,5 +1,4 @@
 /*
- * Copyright 2021 Quentin LEBASTARD <qlebastard@gmail.com>
  * Copyright 2022 Charly Delay <charly@codesink.dev> (@0xcharly)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +17,9 @@
 
 #pragma once
 
-#define DIODE_DIRECTION ROW2COL
+/* Handedness. */
+#define MASTER_LEFT
+
 #define NO_ALT_REPEAT_KEY
 #define PERMISSIVE_HOLD
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
@@ -26,18 +27,13 @@
 #define QUICK_TAP_TERM_PER_KEY
 #define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
-/* RGB settings. */
-#define RGBLED_NUM 58
-#define RGBLED_SPLIT \
-    { 29, 29 }
 
-/* RGB matrix support. */
-#ifdef RGB_MATRIX_ENABLE
-#    define SPLIT_TRANSPORT_MIRROR
-#    define RGB_MATRIX_LED_COUNT RGBLED_NUM
-#    define RGB_MATRIX_SPLIT RGBLED_SPLIT
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 50
-#    define RGB_MATRIX_DEFAULT_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
-#    define RGB_DISABLE_WHEN_USB_SUSPENDED
-#    define RGB_MATRIX_KEYPRESSES
-#endif
+// To use the handedness pin, resistors need to be installed on the adapter PCB.
+// If so, uncomment the following code, and undefine MASTER_RIGHT above.
+// #define SPLIT_HAND_PIN GP15
+// #define SPLIT_HAND_PIN_LOW_IS_LEFT  // High -> right, Low -> left.
+
+/* Reset. */
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP17
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U
