@@ -119,3 +119,7 @@ via*.json
 /keyboards/**/keymaps/vial/*
 
 .vim
+
+.github
+.vscode
+.devcontainer
